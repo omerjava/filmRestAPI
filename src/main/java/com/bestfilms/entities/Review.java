@@ -1,13 +1,12 @@
 package com.bestfilms.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "review")
+@Data
 public class Review {
 
     @Id @GeneratedValue

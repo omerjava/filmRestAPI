@@ -1,10 +1,13 @@
 package com.bestfilms.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="film")
+@Data
 public class Film {
 
     @Id @GeneratedValue
@@ -35,8 +38,8 @@ public class Film {
     @Column(name = "plot")
     private String plot;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "film")
-    private List<Review> reviews;
+  //  @OneToMany(fetch = FetchType.EAGER, mappedBy = "film")
+  //  private List<Review> reviews;
 
     public Film() {
     }
