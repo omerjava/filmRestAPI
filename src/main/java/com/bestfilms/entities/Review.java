@@ -1,12 +1,9 @@
 package com.bestfilms.entities;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "review")
-@Data
 public class Review {
 
     @Id @GeneratedValue
@@ -21,11 +18,12 @@ public class Review {
 
     public Review() { }
 
-    public Review(Long reviewId, String review, Long userId, Long filmId) {
+    public Review(Long reviewId, String review, Long userId, Long filmId, Film film) {
         this.reviewId = reviewId;
         this.review = review;
         this.userId = userId;
         this.filmId = filmId;
+        this.film = film;
     }
 
     public Long getReviewId() {
@@ -58,5 +56,13 @@ public class Review {
 
     public void setFilmId(Long filmId) {
         this.filmId = filmId;
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
     }
 }
